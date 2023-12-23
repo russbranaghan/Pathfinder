@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+input[type="number"],
+button,
+label {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#cy {
+    width: 100%;
+    height: 800px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    margin-top: 20px;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+}
+
+.radio-container label {
+    margin-right: 10px;
+}
+
+#network-density {
+    margin-top: 20px;
+}
+
+#network-density h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#network-density p {
+    font-size: 16px;
+}
+
+#network-stats {
+    margin-top: 20px;
+}
+
+#network-stats h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#network-stats table {
+    width: 40%; /* Make the table narrower */
+    border-collapse: collapse;
+}
+
+#network-stats th {
+    cursor: pointer;
+    background-color: #f2f2f2;
+}
+
+#network-stats th.sorted-ascending::after {
+    content: ' ▲';
+}
+
+#network-stats th.sorted-descending::after {
+    content: ' ▼';
+}
+
+#network-stats th.centered {
+    text-align: center; /* Center the text in the header */
+}
+
+#network-stats td {
+    padding: 8px;
+    text-align: center; /* Center the text in the table cells */
+    border-bottom: 1px solid #ddd;
+}
+
+#network-stats th.node-column,
+#network-stats td.node-column {
+    text-align: left !important; /* Left-align the text in the "Node" column */
+}
+
+#network-stats tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matrix Calculations and Network Visualization</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="https://unpkg.com/cytoscape@latest/dist/cytoscape.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <input type="file" id="input-excel" />
+    <div class="input-container">
+        <div class="radio-container">
+            <label for="network-type">Select Network Type:</label>
+            <input type="radio" id="pathfinder-network" name="network-type" value="pathfinder" checked>
+            <label for="pathfinder-network">Pathfinder</label>
+            <input type="radio" id="nearest-neighbor-network" name="network-type" value="nearest-neighbor">
+            <label for="nearest-neighbor-network">Nearest Neighbor</label>
+        </div>
+        <label for="input-q">Q Parameter (2 to n-1): </label>
+        <input type="number" id="input-q" min="2" /><br />
+
+        <label for="input-r">R Metric (1 to Infinity): </label>
+        <input type="number" id="input-r" min="1" step="any" /><br />
+
+        <label for="input-max-value">Max Value: </label>
+        <input type="number" id="input-max-value" step="any" /><br />
+    </div>
+
+    <label for="toggle-labels">Show Link Labels:</label>
+    <input type="checkbox" id="toggle-labels" checked /><br />
+
+    <!-- Display network density -->
+    <div id="network-density">
+        <h2>Network Density</h2>
+        <p id="density-value">Network Density: N/A</p>
+    </div>
+
+    <button id="calculate-button">Calculate</button>
+
+    <div id="cy"></div>
+
+    <div id="network-stats">
+        <h2>Network Statistics</h2>
+        <table id="stats-table">
+            <thead>
+                <tr>
+                    <th class="sortable centered node-column" style="text-align: left;">Node</th>
+                    <th class="sortable centered">Degree Centrality</th>
+                    <th class="sortable centered">Eccentricity</th>
+                    <th class="sortable centered">Median</th>
+                </tr>
+            </thead>
+            <tbody id="stats-table-body">
+                <!-- The table body content will be added dynamically using JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+<script src="script.js"></script>
+<script src="file.js"></script>
+<script src="matrix.js"></script>
+<script src="metrics.js"></script>
+<script src="network.js"></script>
+
+</body>
+</html>
